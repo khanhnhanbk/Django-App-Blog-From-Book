@@ -1,5 +1,9 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}
+  {{ block.super }} | Posts
+{% endblock %}
+
 {% block content %}
   <!-- Section: Content -->
   <section class="text-center">
@@ -15,8 +19,12 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.content }}</p>
-              <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+              <p class="card-text">{{ post.body|truncatewords:30|linebreaks }}</p>
+              <p class="card-text">
+                <small class="text-muted">Written by {{ post.author|upper }}</small>
+                <small class="text-muted">{{ post.publish }}</small>
+              </p>
+              <a href="{{ post.get_absolute_url }}" class="btn btn-primary" data-mdb-ripple-init>Read</a>
             </div>
           </div>
         </div>

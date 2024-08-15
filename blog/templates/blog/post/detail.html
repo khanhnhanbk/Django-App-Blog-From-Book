@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
-
+{% block title %}
+  {{ block.super }} | {{ post.title }}
+{% endblock %}
 {% block content %}
   <!-- Image Section -->
   <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">

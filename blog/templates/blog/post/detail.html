@@ -14,4 +14,5 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
   </div>
+  <a href="{% url 'blog:post_share' post.id %}" class="btn btn-primary">Share</a>
 {% endblock %}

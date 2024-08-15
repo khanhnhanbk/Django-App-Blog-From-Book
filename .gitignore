@@ -27,3 +27,5 @@ extras/sample_site/db.sqlite3
 .tox/
 
 venv/
+
+.env

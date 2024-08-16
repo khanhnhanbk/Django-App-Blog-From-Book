@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load blog_tags %}
 
 {% block title %}
   {{ block.super }} | {{ post.title }}
@@ -15,7 +16,7 @@
   <div class="container mt-5">
     <h1 class="display-4">{{ post.title }}</h1>
     <p class="text-muted">Published on {{ post.publish }} by {{ post.author }}</p>
-    <p class="lead">{{ post.content }}</p>
+    <p class="lead">{{ post.content|markdown }}</p>
   </div>
 
   <!-- Share Button -->

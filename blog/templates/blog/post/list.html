@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% load blog_tags %}
 {% block title %}
   {{ block.super }} | Posts
 {% endblock %}
@@ -24,7 +24,7 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+                <p class="card-text">{{ post.content|markdown|truncatewords_html:20 }}</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted"><strong>By {{ post.author|upper }}</strong> | {{ post.publish }}</small>

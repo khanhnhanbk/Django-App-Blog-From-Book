@@ -16,24 +16,71 @@
   </div>
 
   <!-- Share Button -->
-  <a href="{% url 'blog:post_share' post.id %}" class="btn btn-warning btn-lg mt-3"><i class="bi bi-share-fill"></i> Share</a>
+  <div class="text-end">
+    <a href="{% url 'blog:post_share' post.id %}" class="btn btn-warning btn-lg mt-3"><i class="bi bi-share-fill"></i> Share</a>
+  </div>
+
+  <div class="row">
+    {% for post in similar_posts %}
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+            <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid" />
+            <a href="#!"><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="text-start">{{ post.content|truncatewords:20 }}</p>
+            <p class="card-text">
+              <small class="text-muted"><strong>Written by {{ post.author|upper }}</strong></small>
+              <small class="text-muted">{{ post.publish }}</small>
+            </p>
+            <a href="{{ post.get_absolute_url }}" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+
+            {% comment %}tags{% endcomment %}
+            <div class="mt-3">
+              {% for post_tag in post.tags.all %}
+                <a href="{% url 'blog:post_list_by_tag' post_tag.slug %}" class="badge bg-primary">{{ post_tag.name }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No similar posts yet.</p>
+    {% endfor %}
+  </div>
+
   <!-- Comment Section -->
-  <div class="container mt-5">
-    <h2 class="h4">Comments</h2>
-    <form action="{% url 'blog:post_comment' post.id %}" method="post">
-      {% csrf_token %}
-      {% load crispy_forms_tags %}
-      {{ form|crispy }}
-      <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
-    </form>
-    <ul class="list-unstyled mt-4">
-      {% for comment in comments %}
-        <li class="mb-2">
-          <strong>{{ comment.name }}</strong>: {{ comment.body }}
-        </li>
-      {% empty %}
-        <li>No comments yet.</li>
-      {% endfor %}
-    </ul>
+  <div class="container mt-5" id="post_comment">
+    <div class="row g-5">
+      <div class="col-6">
+        <h2>Comments</h2>
+        <ul class="list-unstyled mt-4">
+          {% for comment in comments %}
+            <li class="mb-3 p-3 border rounded bg-light">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>{{ comment.name }}</strong>
+                  <p class="mb-1">{{ comment.body }}</p>
+                </div>
+                <small class="text-muted">{{ comment.created }}</small>
+              </div>
+            </li>
+          {% empty %}
+            <li>No comments yet.</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-6">
+        <h2>Add a comment</h2>
+        <form action="{% url 'blog:post_comment' post.id %}#post_comment" method="post" class="row g-3">
+          {% csrf_token %}
+          {% load crispy_forms_tags %}
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
+        </form>
+      </div>
+    </div>
   </div>
 {% endblock %}

@@ -1,17 +1,20 @@
 {% extends 'blog/base.html' %}
+
 {% block title %}
   {{ block.super }} | {{ post.title }}
 {% endblock %}
+
 {% block content %}
   <!-- Image Section -->
   <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
-    <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid w-100" />
-    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    <img src="https://picsum.photos/1200/400?random={{ post.id }}" class="img-fluid w-100 rounded" alt="{{ post.title }}" />
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);"></div>
   </div>
 
   <!-- Content Section -->
   <div class="container mt-5">
     <h1 class="display-4">{{ post.title }}</h1>
+    <p class="text-muted">Published on {{ post.publish }} by {{ post.author }}</p>
     <p class="lead">{{ post.content }}</p>
   </div>
 
@@ -20,41 +23,42 @@
     <a href="{% url 'blog:post_share' post.id %}" class="btn btn-warning btn-lg mt-3"><i class="bi bi-share-fill"></i> Share</a>
   </div>
 
-  <div class="row">
-    {% for post in similar_posts %}
-      <div class="col-lg-4 col-md-12 mb-4">
-        <div class="card">
-          <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
-            <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid" />
-            <a href="#!"><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="text-start">{{ post.content|truncatewords:20 }}</p>
-            <p class="card-text">
-              <small class="text-muted"><strong>Written by {{ post.author|upper }}</strong></small>
-              <small class="text-muted">{{ post.publish }}</small>
-            </p>
-            <a href="{{ post.get_absolute_url }}" class="btn btn-primary" data-mdb-ripple-init>Read</a>
-
-            {% comment %}tags{% endcomment %}
-            <div class="mt-3">
+  <!-- Similar Posts Section -->
+  <div class="container mt-5">
+    <h2>Related Posts</h2>
+    <div class="row">
+      {% for post in similar_posts %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid card-img-top rounded-top" alt="{{ post.title }}" />
+              <a href="{{ post.get_absolute_url }}"><div class="mask" style="background-color: rgba(0, 0, 0, 0.15);"></div></a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><strong>By {{ post.author|upper }}</strong> | {{ post.publish }}</small>
+              <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm float-end" data-mdb-ripple-init>Read More</a>
+            </div>
+            <div class="card-footer mt-3">
               {% for post_tag in post.tags.all %}
                 <a href="{% url 'blog:post_list_by_tag' post_tag.slug %}" class="badge bg-primary">{{ post_tag.name }}</a>
               {% endfor %}
             </div>
           </div>
         </div>
-      </div>
-    {% empty %}
-      <p>No similar posts yet.</p>
-    {% endfor %}
+      {% empty %}
+        <p>No similar posts yet.</p>
+      {% endfor %}
+    </div>
   </div>
 
   <!-- Comment Section -->
   <div class="container mt-5" id="post_comment">
     <div class="row g-5">
-      <div class="col-6">
+      <div class="col-md-6">
         <h2>Comments</h2>
         <ul class="list-unstyled mt-4">
           {% for comment in comments %}
@@ -72,13 +76,13 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="col-6">
-        <h2>Add a comment</h2>
+      <div class="col-md-6">
+        <h2>Add a Comment</h2>
         <form action="{% url 'blog:post_comment' post.id %}#post_comment" method="post" class="row g-3">
           {% csrf_token %}
           {% load crispy_forms_tags %}
           {{ form|crispy }}
-          <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
       </div>
     </div>

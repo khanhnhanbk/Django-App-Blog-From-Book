@@ -1,7 +1,7 @@
 <ul class="nav flex-column">
   {% for post in latest_posts %}
     <li class="nav-item">
-      <a class="nav-link active text-truncate" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      <a class="nav-link active text-truncate" href="{{ post.get_absolute_url }}" style="max-width: 170px;">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>

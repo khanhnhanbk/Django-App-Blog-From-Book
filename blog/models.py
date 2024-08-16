@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 
 class PublisherManager(models.Manager):
@@ -31,6 +32,7 @@ class Post(models.Model):
         choices=Status,
         default=Status.DRAFT,
     )
+    tags = TaggableManager()
 
     objects = models.Manager()
     published = PublisherManager()

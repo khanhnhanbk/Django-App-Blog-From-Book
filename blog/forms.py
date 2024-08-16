@@ -19,3 +19,7 @@ class CommentForm(forms.ModelForm):
             "email": "Your email",
             "body": "Your comment",
         }
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField()

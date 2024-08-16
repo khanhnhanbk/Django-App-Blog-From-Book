@@ -29,4 +29,9 @@ urlpatterns = [
         LatestPostsFeed(),
         name="post_feed",
     ),
+    path(
+        "search/",
+        views.post_search,
+        name="post_search",
+    ),
 ]

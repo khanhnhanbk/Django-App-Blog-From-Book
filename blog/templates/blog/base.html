@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +40,7 @@
 
       <!-- Jumbotron -->
       <div id="intro" class="p-5 text-center bg-light">
-        <h1 class="mb-3 h2">Django Blogs Webisite</h1>
+        <h1 class="mb-3 h2">Django Blogs Website</h1>
         <p class="mb-3">Practice project</p>
       </div>
       <!-- Jumbotron -->
@@ -48,10 +49,30 @@
 
     <!-- Main layout -->
     <main class="my-5">
-      <div class="container">
-        {% block content %}
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Content area -->
+          <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            {% block content %}
+              <!-- Your content goes here -->
+            {% endblock %}
+          </div>
+          <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="position-sticky" style="top: 50px;">
+              <div class="p-3 bg-white rounded shadow-sm">
+                <h4 class="sidebar-heading">My Blog</h4>
+                <p>
+                  This is my blog. I've written&nbsp;{% total_posts %}&nbsp;posts so far.
+                </p>
+                <h4 class="sidebar-heading">Latest posts</h4>
+                {% show_latest_posts 3 %}
 
-        {% endblock %}
+                <h4 class="sidebar-heading">Most commented posts</h4>
+                {% show_most_commented_posts 3 %}
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
     </main>
     <!-- Main layout -->

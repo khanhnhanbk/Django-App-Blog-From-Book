@@ -1,0 +1,7 @@
+<ul class="nav flex-column">
+  {% for post in most_commented_posts %}
+    <li class="nav-item">
+      <a class="nav-link active text-truncate" href="{{ post.get_absolute_url }}" style="max-width: 100%;">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

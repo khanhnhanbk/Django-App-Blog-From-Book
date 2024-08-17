@@ -1,1118 +1,1312 @@
 [
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2024-08-15T00:29:26.086Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "1",
-    "object_repr": "What is the stress?",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-08-16T23:55:31.046Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "5 Simple Morning Habits for a Productive Day",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-08-16T23:56:55.636Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "The Ultimate Guide to Budget-Friendly Travel",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-08-16T23:58:23.457Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "The Ultimate Guide to Budget-Friendly Travel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Publish\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-08-16T23:59:30.589Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "10 Must-Know Travel Tips for First-Time Travelers",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-08-17T00:00:49.106Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "How to Start a Successful Blog in 2024",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-08-17T00:03:11.509Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Top 7 Tips for Mastering Time Management",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add site",
+      "content_type": 7,
+      "codename": "add_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change site",
+      "content_type": 7,
+      "codename": "change_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete site",
+      "content_type": 7,
+      "codename": "delete_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view site",
+      "content_type": 7,
+      "codename": "view_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add tag",
+      "content_type": 8,
+      "codename": "add_tag"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change tag",
+      "content_type": 8,
+      "codename": "change_tag"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete tag",
+      "content_type": 8,
+      "codename": "delete_tag"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view tag",
+      "content_type": 8,
+      "codename": "view_tag"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add tagged item",
+      "content_type": 9,
+      "codename": "add_taggeditem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change tagged item",
+      "content_type": 9,
+      "codename": "change_taggeditem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete tagged item",
+      "content_type": 9,
+      "codename": "delete_taggeditem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view tagged item",
+      "content_type": 9,
+      "codename": "view_taggeditem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add post",
+      "content_type": 10,
+      "codename": "add_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change post",
+      "content_type": 10,
+      "codename": "change_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete post",
+      "content_type": 10,
+      "codename": "delete_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view post",
+      "content_type": 10,
+      "codename": "view_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add comment",
+      "content_type": 11,
+      "codename": "add_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change comment",
+      "content_type": 11,
+      "codename": "change_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete comment",
+      "content_type": 11,
+      "codename": "delete_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view comment",
+      "content_type": 11,
+      "codename": "view_comment"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$czn5DB3aXzLEEXGbEw5diq$nYmNHVoyPtcenC4PRqQHwVprwrVsSCtRwdDxuBYyOnI=",
+      "last_login": "2024-08-16T23:53:10.200Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-16T23:52:48.409Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "sites",
+      "model": "site"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "taggit",
+      "model": "tag"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "taggit",
+      "model": "taggeditem"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "blog",
+      "model": "post"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "blog",
+      "model": "comment"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "fjys2k60xbd0v8krdkvaub1fx4lkmj8z",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hAoCjMu3XsGMjCDVE1JSrsy3l2bdKHb_977LxVpXWpcu8xxZHVWVh1-t0T5IdMG-E7TrencpmUek94UvdOur43ledndv4NKvX5rZxxxMVIEnCFiYlPYQ8oe8CiYzAmGUtBaCCmA2AExMQJyyNYM4NX7AwRuOBs:1sf6ko:YFp2YOWbblrv6CcO9Pf3JzyUAO9e13ZupSIUQ1fSb84",
+      "expire_date": "2024-08-30T23:53:10.203Z"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "domain": "example.com",
+      "name": "example.com"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 1,
+    "fields": {
+      "name": "DailyHabits",
+      "slug": "dailyhabits"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 2,
+    "fields": {
+      "name": "HealthyHabits",
+      "slug": "healthyhabits"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 3,
+    "fields": {
+      "name": "HealthyLiving",
+      "slug": "healthyliving"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Mindfulness",
+      "slug": "mindfulness"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 5,
+    "fields": {
+      "name": "MorningRoutine",
+      "slug": "morningroutine"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 6,
+    "fields": {
+      "name": "ProductivityTips",
+      "slug": "productivitytips"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 7,
+    "fields": {
+      "name": "SelfImprovement",
+      "slug": "selfimprovement"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 8,
+    "fields": {
+      "name": "SuccessMindset",
+      "slug": "successmindset"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 9,
+    "fields": {
+      "name": "TimeManagement",
+      "slug": "timemanagement"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 10,
+    "fields": {
+      "name": "WellnessTips",
+      "slug": "wellnesstips"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 11,
+    "fields": {
+      "name": "AffordableTravel",
+      "slug": "affordabletravel"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 12,
+    "fields": {
+      "name": "Backpacking",
+      "slug": "backpacking"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 13,
+    "fields": {
+      "name": "BudgetFriendly",
+      "slug": "budgetfriendly"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 14,
+    "fields": {
+      "name": "BudgetTravel",
+      "slug": "budgettravel"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 15,
+    "fields": {
+      "name": "CheapFlights",
+      "slug": "cheapflights"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 16,
+    "fields": {
+      "name": "FrugalTravel",
+      "slug": "frugaltravel"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 17,
+    "fields": {
+      "name": "MoneySavingTips",
+      "slug": "moneysavingtips"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 18,
+    "fields": {
+      "name": "TravelHacks",
+      "slug": "travelhacks"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 19,
+    "fields": {
+      "name": "TravelOnABudget",
+      "slug": "travelonabudget"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 20,
+    "fields": {
+      "name": "TravelTips",
+      "slug": "traveltips"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 21,
+    "fields": {
+      "name": "BlogSEO",
+      "slug": "blogseo"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 22,
+    "fields": {
+      "name": "Blogging2024",
+      "slug": "blogging2024"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 23,
+    "fields": {
+      "name": "BloggingTips",
+      "slug": "bloggingtips"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 24,
+    "fields": {
+      "name": "ContentCreation",
+      "slug": "contentcreation"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 25,
+    "fields": {
+      "name": "DigitalMarketing",
+      "slug": "digitalmarketing"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 26,
+    "fields": {
+      "name": "MonetizeYourBlog",
+      "slug": "monetizeyourblog"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 27,
+    "fields": {
+      "name": "OnlineIncome",
+      "slug": "onlineincome"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 28,
+    "fields": {
+      "name": "SocialMediaPromotion",
+      "slug": "socialmediapromotion"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 29,
+    "fields": {
+      "name": "StartABlog",
+      "slug": "startablog"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 30,
+    "fields": {
+      "name": "WebsiteDesign",
+      "slug": "websitedesign"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 31,
+    "fields": {
+      "name": "DailyPlanning",
+      "slug": "dailyplanning"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 32,
+    "fields": {
+      "name": "GoalSetting",
+      "slug": "goalsetting"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 33,
+    "fields": {
+      "name": "Prioritization",
+      "slug": "prioritization"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 34,
+    "fields": {
+      "name": "TimeManagementTools",
+      "slug": "timemanagementtools"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 35,
+    "fields": {
+      "name": "WorkLifeBalance",
+      "slug": "worklifebalance"
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 1,
+    "fields": {
+      "tag": 1,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 2,
+    "fields": {
+      "tag": 2,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 3,
+    "fields": {
+      "tag": 3,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 4,
+    "fields": {
+      "tag": 4,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 5,
+    "fields": {
+      "tag": 5,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 6,
+    "fields": {
+      "tag": 6,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 7,
+    "fields": {
+      "tag": 7,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 8,
+    "fields": {
+      "tag": 8,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 9,
+    "fields": {
+      "tag": 9,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 10,
+    "fields": {
+      "tag": 10,
+      "content_type": 10,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 11,
+    "fields": {
+      "tag": 11,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 12,
+    "fields": {
+      "tag": 12,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 13,
+    "fields": {
+      "tag": 13,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 14,
+    "fields": {
+      "tag": 14,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 15,
+    "fields": {
+      "tag": 15,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 16,
+    "fields": {
+      "tag": 16,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 17,
+    "fields": {
+      "tag": 17,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 18,
+    "fields": {
+      "tag": 18,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 19,
+    "fields": {
+      "tag": 19,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 20,
+    "fields": {
+      "tag": 20,
+      "content_type": 10,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 21,
+    "fields": {
+      "tag": 11,
+      "content_type": 10,
+      "object_id": 3
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 22,
+    "fields": {
+      "tag": 20,
+      "content_type": 10,
+      "object_id": 3
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 23,
+    "fields": {
+      "tag": 21,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 24,
+    "fields": {
+      "tag": 22,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 25,
+    "fields": {
+      "tag": 23,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 26,
+    "fields": {
+      "tag": 24,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 27,
+    "fields": {
+      "tag": 25,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 28,
+    "fields": {
+      "tag": 26,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 29,
+    "fields": {
+      "tag": 27,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 30,
+    "fields": {
+      "tag": 28,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 31,
+    "fields": {
+      "tag": 29,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 32,
+    "fields": {
+      "tag": 30,
+      "content_type": 10,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 33,
+    "fields": {
+      "tag": 31,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 34,
+    "fields": {
+      "tag": 32,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 35,
+    "fields": {
+      "tag": 33,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 36,
+    "fields": {
+      "tag": 6,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 37,
+    "fields": {
+      "tag": 9,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 38,
+    "fields": {
+      "tag": 34,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 39,
+    "fields": {
+      "tag": 35,
+      "content_type": 10,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "5 Simple Morning Habits for a Productive Day",
+      "slug": "5-simple-morning-habits-for-a-productive-day",
+      "author": 1,
+      "content": "**Title:** 5 Simple Morning Habits for a Productive Day\r\n\r\n---\r\n\r\nMornings set the tone for the rest of your day. By adopting a few simple habits, you can boost your productivity and start your day off right. Here are five easy morning habits that can help you be more productive throughout the day.\r\n\r\n### 1. **Wake Up Early**\r\nWaking up early gives you extra time to plan your day and complete tasks without rushing. It also allows you to enjoy a peaceful start to the morning, which can set a positive mood for the day ahead.\r\n\r\n### 2. **Exercise**\r\nEven a short workout in the morning can do wonders for your energy levels. Exercise helps to wake up your body and mind, making you feel more alert and focused.\r\n\r\n### 3. **Eat a Healthy Breakfast**\r\nA nutritious breakfast fuels your body and provides the energy you need to stay focused. Include a balance of proteins, fruits, and whole grains to keep you going strong until lunch.\r\n\r\n### 4. **Plan Your Day**\r\nTake a few minutes each morning to review your goals and prioritize your tasks. This will help you stay organized and ensure that you focus on what�s most important.\r\n\r\n### 5. **Practice Mindfulness**\r\nSpend a few moments in mindfulness or meditation. This practice can help reduce stress and improve your ability to concentrate, making you more productive throughout the day.\r\n\r\n---\r\n\r\nBy incorporating these simple habits into your morning routine, you can start each day feeling energized and ready to take on whatever comes your way.",
+      "publish": "2024-08-16T23:53:22Z",
+      "created": "2024-08-16T23:55:30.958Z",
+      "updated": "2024-08-16T23:55:30.958Z",
+      "status": "PB"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "The Ultimate Guide to Budget-Friendly Travel",
+      "slug": "the-ultimate-guide-to-budget-friendly-travel",
+      "author": 1,
+      "content": "**Title:** The Ultimate Guide to Budget-Friendly Travel\r\n\r\n---\r\n\r\nTraveling doesn't have to break the bank. With careful planning and smart choices, you can explore the world on a budget without sacrificing the experience. Here's your ultimate guide to budget-friendly travel.\r\n\r\n### 1. **Plan Ahead**\r\nBooking flights and accommodations in advance can save you a lot of money. Use price comparison websites and set up alerts to get the best deals.\r\n\r\n### 2. **Travel During Off-Peak Seasons**\r\nAvoid traveling during peak tourist seasons. Prices for flights, hotels, and attractions are often much lower during off-peak times, and you'll also enjoy fewer crowds.\r\n\r\n### 3. **Choose Affordable Destinations**\r\nSome destinations are naturally more affordable than others. Look for countries or cities where your currency goes further, and where the cost of living is lower.\r\n\r\n### 4. **Stay in Budget Accommodations**\r\nInstead of staying in expensive hotels, consider alternatives like hostels, guesthouses, or vacation rentals. These options can be much cheaper and often provide a more authentic experience.\r\n\r\n### 5. **Eat Like a Local**\r\nEating at local markets or street food vendors can save you money and give you a taste of authentic cuisine. Avoid touristy restaurants, which are often overpriced.\r\n\r\n### 6. **Use Public Transportation**\r\nPublic transportation is usually much cheaper than taxis or car rentals. Learn the local transport system, or even better, explore the city by walking or biking.\r\n\r\n### 7. **Look for Free Activities**\r\nMany cities offer free or low-cost activities, like museums, parks, and cultural events. Research what�s available at your destination and plan your itinerary accordingly.\r\n\r\n### 8. **Travel Light**\r\nAvoid extra baggage fees by packing light. Carry-on luggage is usually free, and traveling with less can make your journey easier and more flexible.\r\n\r\n### 9. **Use Travel Rewards**\r\nTake advantage of travel rewards programs, credit card points, or frequent flyer miles to save on flights and accommodations. These can add up over time and lead to significant savings.\r\n\r\n### 10. **Be Flexible**\r\nFlexibility with your travel dates and destinations can help you find better deals. Use flexible search options on travel websites to find the cheapest times to travel.\r\n\r\n---\r\n\r\nWith these tips, you can enjoy amazing travel experiences without overspending. Budget-friendly travel is all about making smart choices and being open to new experiences.\r\n\r\n---",
+      "publish": "2024-08-16T23:58:21Z",
+      "created": "2024-08-16T23:56:55.541Z",
+      "updated": "2024-08-16T23:58:23.447Z",
+      "status": "PB"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 3,
+    "fields": {
+      "title": "10 Must-Know Travel Tips for First-Time Travelers",
+      "slug": "10-must-know-travel-tips-for-first-time-travelers",
+      "author": 1,
+      "content": "**Title:** 10 Must-Know Travel Tips for First-Time Travelers\r\n\r\n---\r\n\r\nTraveling for the first time can be both exciting and a bit overwhelming. To help you make the most of your adventure, here are ten essential travel tips every first-time traveler should know.\r\n\r\n### 1. **Research Your Destination**\r\nBefore you go, take some time to learn about your destination. Understand the local culture, customs, and important landmarks. This will help you feel more prepared and make your trip more enjoyable.\r\n\r\n### 2. **Pack Smart**\r\nAvoid overpacking by creating a list of essentials. Remember to pack versatile clothing that can be mixed and matched, and don't forget important items like travel documents, chargers, and any necessary medications.\r\n\r\n### 3. **Keep Copies of Important Documents**\r\nMake photocopies or digital backups of your passport, visa, travel insurance, and other important documents. This will be helpful in case of loss or theft.\r\n\r\n### 4. **Stay Connected**\r\nEnsure you have a way to stay in touch with family or friends back home. Consider getting a local SIM card or an international phone plan, and download offline maps and translation apps.\r\n\r\n### 5. **Learn Basic Phrases**\r\nKnowing a few basic phrases in the local language can go a long way. Even simple greetings or asking for directions can make your experience more pleasant.\r\n\r\n### 6. **Be Aware of Your Surroundings**\r\nSafety is crucial, especially when traveling in unfamiliar places. Keep your belongings secure, stay aware of your surroundings, and avoid risky areas, especially at night.\r\n\r\n### 7. **Budget Your Trip**\r\nPlan a budget for your trip and try to stick to it. Consider using a travel budget app to track your expenses, so you don't overspend.\r\n\r\n### 8. **Be Flexible with Your Plans**\r\nWhile it's good to have an itinerary, leave some room for spontaneous adventures. Being flexible allows you to explore unexpected opportunities and enjoy your trip more fully.\r\n\r\n### 9. **Respect Local Customs**\r\nEvery place has its own customs and traditions. Be respectful of local practices, dress appropriately, and follow any rules or guidelines at religious or historical sites.\r\n\r\n### 10. **Enjoy the Experience**\r\nFinally, don't forget to enjoy the journey! Take time to soak in the sights, meet new people, and create memories that will last a lifetime.\r\n\r\n---\r\n\r\nTraveling for the first time is an incredible experience. With these tips, you'll be well-prepared to embark on your adventure with confidence.\r\n\r\n---",
+      "publish": "2024-08-16T23:58:34Z",
+      "created": "2024-08-16T23:59:30.571Z",
+      "updated": "2024-08-16T23:59:30.571Z",
+      "status": "PB"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 4,
+    "fields": {
+      "title": "How to Start a Successful Blog in 2024",
+      "slug": "how-to-start-a-successful-blog-in-2024",
+      "author": 1,
+      "content": "**Title:** How to Start a Successful Blog in 2024\r\n\r\n---\r\n\r\nStarting a blog in 2024 can be a rewarding way to share your ideas, connect with others, and even earn income. Whether you're blogging for fun or business, here's a step-by-step guide to help you create a successful blog this year.\r\n\r\n### 1. **Choose Your Niche**\r\nDecide on a specific topic or niche for your blog. This could be anything you're passionate about, such as travel, cooking, technology, or personal finance. A clear niche helps you attract a targeted audience who are interested in your content.\r\n\r\n### 2. **Pick a Blogging Platform**\r\nSelect a blogging platform that suits your needs. Popular options include WordPress, Wix, and Blogger. WordPress is often recommended for its flexibility and customization options, especially if you plan to grow your blog over time.\r\n\r\n### 3. **Register a Domain Name**\r\nYour domain name is your blog�s address on the internet. Choose a name that�s easy to remember, reflects your niche, and preferably ends in .com. Use domain registrars like GoDaddy or Namecheap to secure your domain.\r\n\r\n### 4. **Set Up Hosting**\r\nTo get your blog online, you'll need a web hosting service. Companies like Bluehost, SiteGround, and HostGator offer reliable hosting services with easy WordPress integration. Choose a plan that fits your budget and needs.\r\n\r\n### 5. **Design Your Blog**\r\nChoose a clean and responsive design for your blog. Most blogging platforms offer a variety of themes you can customize. Focus on making your blog easy to navigate, with a design that reflects your brand and appeals to your audience.\r\n\r\n### 6. **Create Quality Content**\r\nContent is the heart of your blog. Focus on creating high-quality, informative, and engaging posts that provide value to your readers. Use a mix of text, images, and videos to keep your content interesting.\r\n\r\n### 7. **Optimize for SEO**\r\nSearch engine optimization (SEO) helps your blog rank higher in search engine results. Research keywords related to your niche and use them naturally in your posts. Also, ensure your blog loads quickly, is mobile-friendly, and has a clear structure.\r\n\r\n### 8. **Promote Your Blog**\r\nShare your blog posts on social media platforms like Instagram, Twitter, and Facebook. Engage with your audience, join relevant online communities, and consider guest posting on other blogs to increase your reach.\r\n\r\n### 9. **Monetize Your Blog**\r\nOnce you have consistent traffic, you can start monetizing your blog. Options include affiliate marketing, sponsored posts, selling digital products, or offering services. Choose the monetization strategy that aligns with your blog's goals.\r\n\r\n### 10. **Stay Consistent and Patient**\r\nBuilding a successful blog takes time and effort. Post regularly, engage with your readers, and be patient. Over time, your dedication will pay off as your audience grows.\r\n\r\n---\r\n\r\nStarting a blog in 2024 is an exciting opportunity to share your voice with the world. By following these steps and staying committed, you can build a blog that not only resonates with readers but also achieves your goals.\r\n\r\n---",
+      "publish": "2024-08-16T23:59:35Z",
+      "created": "2024-08-17T00:00:49.023Z",
+      "updated": "2024-08-17T00:00:49.023Z",
+      "status": "PB"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 5,
+    "fields": {
+      "title": "Top 7 Tips for Mastering Time Management",
+      "slug": "top-7-tips-for-mastering-time-management",
+      "author": 1,
+      "content": "**Title:** Top 7 Tips for Mastering Time Management\r\n\r\n---\r\n\r\nEffective time management is crucial for productivity and success, whether you're a student, professional, or entrepreneur. Here are seven essential tips to help you master time management and make the most of your day.\r\n\r\n### 1. **Set Clear Goals**\r\nStart by defining what you want to achieve. Set specific, measurable, and realistic goals that guide your daily activities. Having clear goals helps you focus on what truly matters.\r\n\r\n### 2. **Prioritize Tasks**\r\nNot all tasks are equally important. Use a prioritization method, like the Eisenhower Matrix, to identify which tasks are urgent and important. Focus on these first before moving on to less critical activities.\r\n\r\n### 3. **Create a Daily Schedule**\r\nPlan your day by creating a schedule or to-do list. Allocate specific time slots for each task and stick to them. This helps you stay organized and ensures that you have enough time to complete everything on your list.\r\n\r\n### 4. **Avoid Multitasking**\r\nWhile multitasking might seem like a time-saver, it often leads to mistakes and decreased productivity. Focus on one task at a time, giving it your full attention before moving on to the next.\r\n\r\n### 5. **Use Time Management Tools**\r\nThere are numerous tools and apps available to help you manage your time effectively. Tools like Trello, Todoist, or Google Calendar can help you track tasks, set reminders, and stay organized.\r\n\r\n### 6. **Take Breaks**\r\nWorking non-stop can lead to burnout and decreased efficiency. Incorporate short breaks into your schedule to rest and recharge. Techniques like the Pomodoro Technique, where you work for 25 minutes and then take a 5-minute break, can be highly effective.\r\n\r\n### 7. **Reflect and Adjust**\r\nAt the end of each day or week, take some time to reflect on your progress. Analyze what worked well and what didn�t. Adjust your strategies as needed to improve your time management skills over time.\r\n\r\n---\r\n\r\nBy implementing these tips, you'll be able to manage your time more effectively, reduce stress, and increase your productivity. Mastering time management is a skill that will benefit you in every area of your life.\r\n\r\n---\r\n\r\n**Tags:** TimeManagement, ProductivityTips, GoalSetting, Prioritization, DailyPlanning, TimeManagementTools, WorkLifeBalance\r\n\r\n---\r\n\r\nThese tags will help your post reach readers looking to improve their time management skills and overall productivity.",
+      "publish": "2024-08-17T00:02:39Z",
+      "created": "2024-08-17T00:03:11.459Z",
+      "updated": "2024-08-17T00:03:11.459Z",
+      "status": "PB"
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 1,
+    "fields": {
+      "post": 5,
+      "name": "Nhan",
+      "email": "nhanhoa21012002@gmail.com",
+      "body": "Good post. I am grateful for that.",
+      "created": "2024-08-17T00:06:57.054Z",
+      "updated": "2024-08-17T00:06:57.054Z",
+      "active": true
+    }
   }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2024-08-15T01:16:32.991Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "1",
-    "object_repr": "What is the stress?",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2024-08-15T02:40:51.723Z",
-    "user": 1,
-    "content_type": 4,
-    "object_id": "2",
-    "object_repr": "nhann",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2024-08-15T02:41:27.071Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "3",
-    "object_repr": "A day of student",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2024-08-15T02:42:01.300Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "4",
-    "object_repr": "Ok, The last post",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2024-08-15T02:42:15.492Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "4",
-    "object_repr": "Ok, The last post",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2024-08-15T08:20:04.261Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "1",
-    "object_repr": "Comment by Nhan on What is the stress?",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2024-08-16T00:32:52.586Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "4",
-    "object_repr": "Ok, The last post",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2024-08-16T00:43:20.870Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "3",
-    "object_repr": "A day of student",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2024-08-16T00:49:47.161Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "1",
-    "object_repr": "What is the stress?",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Content\", \"Tags\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2024-08-16T00:50:00.829Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "2",
-    "object_repr": "The Section-post",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Content\", \"Tags\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2024-08-16T00:50:19.607Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "3",
-    "object_repr": "A day of student",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2024-08-16T02:18:35.535Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "5",
-    "object_repr": "This is a very long title post then I want to it not long",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2024-08-16T02:39:35.617Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "6",
-    "object_repr": "markdown post",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2024-08-16T02:41:25.747Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "6",
-    "object_repr": "markdown post",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2024-08-16T07:52:28.779Z",
-    "user": 4,
-    "content_type": 4,
-    "object_id": "3",
-    "object_repr": "phong",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2024-08-16T07:52:50.364Z",
-    "user": 4,
-    "content_type": 11,
-    "object_id": "1",
-    "object_repr": "localhost:8000",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2024-08-16T07:53:20.470Z",
-    "user": 4,
-    "content_type": 4,
-    "object_id": "1",
-    "object_repr": "admin",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 1,
-  "fields": {
-    "name": "Can add log entry",
-    "content_type": 1,
-    "codename": "add_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 2,
-  "fields": {
-    "name": "Can change log entry",
-    "content_type": 1,
-    "codename": "change_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 3,
-  "fields": {
-    "name": "Can delete log entry",
-    "content_type": 1,
-    "codename": "delete_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 4,
-  "fields": {
-    "name": "Can view log entry",
-    "content_type": 1,
-    "codename": "view_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 5,
-  "fields": {
-    "name": "Can add permission",
-    "content_type": 2,
-    "codename": "add_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 6,
-  "fields": {
-    "name": "Can change permission",
-    "content_type": 2,
-    "codename": "change_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 7,
-  "fields": {
-    "name": "Can delete permission",
-    "content_type": 2,
-    "codename": "delete_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 8,
-  "fields": {
-    "name": "Can view permission",
-    "content_type": 2,
-    "codename": "view_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 9,
-  "fields": {
-    "name": "Can add group",
-    "content_type": 3,
-    "codename": "add_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 10,
-  "fields": {
-    "name": "Can change group",
-    "content_type": 3,
-    "codename": "change_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 11,
-  "fields": {
-    "name": "Can delete group",
-    "content_type": 3,
-    "codename": "delete_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 12,
-  "fields": {
-    "name": "Can view group",
-    "content_type": 3,
-    "codename": "view_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 13,
-  "fields": {
-    "name": "Can add user",
-    "content_type": 4,
-    "codename": "add_user"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 14,
-  "fields": {
-    "name": "Can change user",
-    "content_type": 4,
-    "codename": "change_user"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 15,
-  "fields": {
-    "name": "Can delete user",
-    "content_type": 4,
-    "codename": "delete_user"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 16,
-  "fields": {
-    "name": "Can view user",
-    "content_type": 4,
-    "codename": "view_user"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 17,
-  "fields": {
-    "name": "Can add content type",
-    "content_type": 5,
-    "codename": "add_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 18,
-  "fields": {
-    "name": "Can change content type",
-    "content_type": 5,
-    "codename": "change_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 19,
-  "fields": {
-    "name": "Can delete content type",
-    "content_type": 5,
-    "codename": "delete_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 20,
-  "fields": {
-    "name": "Can view content type",
-    "content_type": 5,
-    "codename": "view_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 21,
-  "fields": {
-    "name": "Can add session",
-    "content_type": 6,
-    "codename": "add_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 22,
-  "fields": {
-    "name": "Can change session",
-    "content_type": 6,
-    "codename": "change_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 23,
-  "fields": {
-    "name": "Can delete session",
-    "content_type": 6,
-    "codename": "delete_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 24,
-  "fields": {
-    "name": "Can view session",
-    "content_type": 6,
-    "codename": "view_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 25,
-  "fields": {
-    "name": "Can add post",
-    "content_type": 7,
-    "codename": "add_post"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 26,
-  "fields": {
-    "name": "Can change post",
-    "content_type": 7,
-    "codename": "change_post"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 27,
-  "fields": {
-    "name": "Can delete post",
-    "content_type": 7,
-    "codename": "delete_post"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 28,
-  "fields": {
-    "name": "Can view post",
-    "content_type": 7,
-    "codename": "view_post"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 29,
-  "fields": {
-    "name": "Can add comment",
-    "content_type": 8,
-    "codename": "add_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 30,
-  "fields": {
-    "name": "Can change comment",
-    "content_type": 8,
-    "codename": "change_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 31,
-  "fields": {
-    "name": "Can delete comment",
-    "content_type": 8,
-    "codename": "delete_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 32,
-  "fields": {
-    "name": "Can view comment",
-    "content_type": 8,
-    "codename": "view_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 33,
-  "fields": {
-    "name": "Can add tag",
-    "content_type": 9,
-    "codename": "add_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 34,
-  "fields": {
-    "name": "Can change tag",
-    "content_type": 9,
-    "codename": "change_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 35,
-  "fields": {
-    "name": "Can delete tag",
-    "content_type": 9,
-    "codename": "delete_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 36,
-  "fields": {
-    "name": "Can view tag",
-    "content_type": 9,
-    "codename": "view_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 37,
-  "fields": {
-    "name": "Can add tagged item",
-    "content_type": 10,
-    "codename": "add_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 38,
-  "fields": {
-    "name": "Can change tagged item",
-    "content_type": 10,
-    "codename": "change_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 39,
-  "fields": {
-    "name": "Can delete tagged item",
-    "content_type": 10,
-    "codename": "delete_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 40,
-  "fields": {
-    "name": "Can view tagged item",
-    "content_type": 10,
-    "codename": "view_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 41,
-  "fields": {
-    "name": "Can add site",
-    "content_type": 11,
-    "codename": "add_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 42,
-  "fields": {
-    "name": "Can change site",
-    "content_type": 11,
-    "codename": "change_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 43,
-  "fields": {
-    "name": "Can delete site",
-    "content_type": 11,
-    "codename": "delete_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 44,
-  "fields": {
-    "name": "Can view site",
-    "content_type": 11,
-    "codename": "view_site"
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$870000$lR4cDcuW8rAOeyFPMinSjf$Bd7p9irumtBypWde9vmKdwyeHdfsIKKWDUTt+QccTAE=",
-    "last_login": "2024-08-16T08:29:28.301Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@admin.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-08-15T00:25:03.548Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$870000$YM7CgLzetknVzyHvFrpGjz$mM+j5PjCa6jR2XkIDq0Dkv19THrxqdKwWyRvAupf4aQ=",
-    "last_login": null,
-    "is_superuser": true,
-    "username": "phong",
-    "first_name": "",
-    "last_name": "",
-    "email": "phone@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-08-16T07:49:32.370Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$870000$AihxDcteQT8qXXlZIZnmcZ$tk+IBTR+RYW/3yfLohYOh1TE3qjthrSGCDXbn85ZzmY=",
-    "last_login": "2024-08-16T07:52:10.971Z",
-    "is_superuser": true,
-    "username": "nhan",
-    "first_name": "",
-    "last_name": "",
-    "email": "nhan@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-08-16T07:51:50.720Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 1,
-  "fields": {
-    "app_label": "admin",
-    "model": "logentry"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 2,
-  "fields": {
-    "app_label": "auth",
-    "model": "permission"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 3,
-  "fields": {
-    "app_label": "auth",
-    "model": "group"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 4,
-  "fields": {
-    "app_label": "auth",
-    "model": "user"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 5,
-  "fields": {
-    "app_label": "contenttypes",
-    "model": "contenttype"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 6,
-  "fields": {
-    "app_label": "sessions",
-    "model": "session"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 7,
-  "fields": {
-    "app_label": "blog",
-    "model": "post"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 8,
-  "fields": {
-    "app_label": "blog",
-    "model": "comment"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 9,
-  "fields": {
-    "app_label": "taggit",
-    "model": "tag"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 10,
-  "fields": {
-    "app_label": "taggit",
-    "model": "taggeditem"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 11,
-  "fields": {
-    "app_label": "sites",
-    "model": "site"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "95uzrhydv20gs99am6osw75swxv1v7h9",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAQRf-FtSEdWgZw6d5vIDM8pGogKe3K-O_apAvd3nPOfQlP21r81tPi5yjOAsTpd2MKj1R3EO9Ub02GVtdlZrkr8qBdXltMz8vh_h0U6uVbKwVgowLrBgbIAS2A45CRSBOgM2xUGJEd0zSyjkNCE3V2OFnrEIN4fwDF9DdM:1sesKu:spUsbwheZZ0siLuJUwa0P7dcFSDaLxf29fK5D6RO4Nk",
-    "expire_date": "2024-08-30T08:29:28.307Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "byud6opbmns3tjzsxgkvlb5arunxg5u1",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hCmQKEu3XsGMjCDVA0kpV0Z765NutDtf-_9lwi4rSVsnZcwkzgLI06_W8T04LoDumO9NZlaXZc5yl2RB-3y2oifl8P9OyjYy7eenB2sH53VBrxPCZiNZ3JZg1YquxitcmMePGWyGVJkMg54QgTwwFG8P8ivN-E:1serlw:LjxGhDkelhjExXOZciXF7ow-kKFa-7ynNF2RxQTfw_g",
-    "expire_date": "2024-08-30T07:53:20.488Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "g7h0ybcjp0fqiesu03jhoysji55qqrfg",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAQRf-FtSEdWgZw6d5vIDM8pGogKe3K-O_apAvd3nPOfQlP21r81tPi5yjOAsTpd2MKj1R3EO9Ub02GVtdlZrkr8qBdXltMz8vh_h0U6uVbKwVgowLrBgbIAS2A45CRSBOgM2xUGJEd0zSyjkNCE3V2OFnrEIN4fwDF9DdM:1serm5:Dy7PuyNwRdN1NFQ3PuIVX5Gat_oL0Si2-ZdT7fT5Gv0",
-    "expire_date": "2024-08-30T07:53:29.887Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "n1puwq55yz3np2anid5693azqekhmzx0",
-  "fields": {
-    "session_data": ".eJxVjMEOwiAQRP-FsyHLBhA8evcbyAKLVA0kpT0Z_9026UFPk8x7M28RaF1qWAfPYcriIpQ4_XaR0pPbDvKD2r3L1NsyT1HuijzokLee-XU93L-DSqNua61cpAgaUikq6UgGCLTBjMU5x7TFmbQ3nlWyYBN6j54YLRlCwCg-X-dlN70:1seOJq:NguFxwbsSFe6LujYAtvKxMX2hA2LN9p1b8kR4mqunmY",
-    "expire_date": "2024-08-29T00:26:22.507Z"
-  }
-},
-{
-  "model": "sites.site",
-  "pk": 1,
-  "fields": {
-    "domain": "localhost:8000",
-    "name": "localhost:8000"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 1,
-  "fields": {
-    "name": "hot",
-    "slug": "hot"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 2,
-  "fields": {
-    "name": "news",
-    "slug": "news"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 3,
-  "fields": {
-    "name": "fix life",
-    "slug": "fix-life"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 4,
-  "fields": {
-    "name": "lorem",
-    "slug": "lorem"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 5,
-  "fields": {
-    "name": "doc",
-    "slug": "doc"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 6,
-  "fields": {
-    "name": "markdown",
-    "slug": "markdown"
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 1,
-  "fields": {
-    "tag": 1,
-    "content_type": 7,
-    "object_id": 4
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 2,
-  "fields": {
-    "tag": 2,
-    "content_type": 7,
-    "object_id": 4
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 3,
-  "fields": {
-    "tag": 3,
-    "content_type": 7,
-    "object_id": 3
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 4,
-  "fields": {
-    "tag": 1,
-    "content_type": 7,
-    "object_id": 3
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 5,
-  "fields": {
-    "tag": 4,
-    "content_type": 7,
-    "object_id": 1
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 6,
-  "fields": {
-    "tag": 4,
-    "content_type": 7,
-    "object_id": 2
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 7,
-  "fields": {
-    "tag": 4,
-    "content_type": 7,
-    "object_id": 5
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 8,
-  "fields": {
-    "tag": 5,
-    "content_type": 7,
-    "object_id": 6
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 9,
-  "fields": {
-    "tag": 6,
-    "content_type": 7,
-    "object_id": 6
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 1,
-  "fields": {
-    "title": "What is the stress?",
-    "slug": "what-is-the-stress",
-    "author": 1,
-    "content": "What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nWhere does it come from?\r\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
-    "publish": "2024-08-15T00:28:13Z",
-    "created": "2024-08-15T00:29:26.084Z",
-    "updated": "2024-08-16T00:49:47.155Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 2,
-  "fields": {
-    "title": "The Section-post",
-    "slug": "the-section-post",
-    "author": 1,
-    "content": "What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nWhat is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "publish": "2024-08-15T02:39:59Z",
-    "created": "2024-08-15T02:40:33.176Z",
-    "updated": "2024-08-16T00:50:00.823Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 3,
-  "fields": {
-    "title": "A day of student",
-    "slug": "a-day-of-student",
-    "author": 1,
-    "content": "What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nWhat is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "publish": "2024-08-15T02:41:00Z",
-    "created": "2024-08-15T02:41:27.070Z",
-    "updated": "2024-08-16T00:50:19.603Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 4,
-  "fields": {
-    "title": "Ok, The last post",
-    "slug": "ok-the-last-post",
-    "author": 1,
-    "content": "Ok, this is the lorem content.",
-    "publish": "2024-08-15T02:41:30Z",
-    "created": "2024-08-15T02:42:01.299Z",
-    "updated": "2024-08-16T00:32:52.577Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 5,
-  "fields": {
-    "title": "This is a very long title post then I want to it not long",
-    "slug": "this-is-a-very-long-title-post-then-i-want-to-it-not-long",
-    "author": 1,
-    "content": "Taken from the Latin words \"dolorem ipsum\", which translates to \"pain itself\", Lorem Ipsum text saw a revival in the mid-20th century as placeholder text in printing and design.\r\n\r\nThe lorem ipsum is based on De finibus bonorum et malorum, a Latin text written by Cicero in 45 BC. Typographers and printers have used passages from this work for formatting since the 16th century.\r\n\r\nMany words have been added or modified over the centuries. As a result, the lorem ipsum is no longer considered Latin, even though it looks a lot like it.",
-    "publish": "2024-08-16T02:17:41Z",
-    "created": "2024-08-16T02:18:35.529Z",
-    "updated": "2024-08-16T02:18:35.529Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 6,
-  "fields": {
-    "title": "markdown post",
-    "slug": "markdown-post",
-    "author": 1,
-    "content": "# Welcome to StackEdit!\r\n\r\nHi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.\r\n\r\n\r\n# Files\r\n\r\nStackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**\r\n\r\n## Create files and folders\r\n\r\nThe file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.\r\n\r\n## Switch to another file\r\n\r\nAll your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.\r\n\r\n## Rename a file\r\n\r\nYou can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.\r\n\r\n## Delete a file\r\n\r\nYou can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.\r\n\r\n## Export a file\r\n\r\nYou can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.\r\n\r\n\r\n# Synchronization\r\n\r\nSynchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.\r\n\r\nThere are two types of synchronization and they can complement each other:\r\n\r\n- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.\r\n\t> To start syncing your workspace, just sign in with Google in the menu.\r\n\r\n- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.\r\n\t> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.\r\n\r\n## Open a file\r\n\r\nYou can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.\r\n\r\n## Save a file\r\n\r\nYou can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.\r\n\r\n## Synchronize a file\r\n\r\nOnce your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.\r\n\r\nIf you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.\r\n\r\n> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.\r\n\r\n## Manage file synchronization\r\n\r\nSince one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.\r\n\r\n\r\n# Publication\r\n\r\nPublishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.\r\n\r\n> Before starting to publish, you must link an account in the **Publish** sub-menu.\r\n\r\n## Publish a File\r\n\r\nYou can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:\r\n\r\n- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).\r\n\r\n## Update a publication\r\n\r\nAfter publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.\r\n\r\n> **Note:** The **Publish now** button is disabled if your file has not been published yet.\r\n\r\n## Manage file publication\r\n\r\nSince one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.\r\n\r\n\r\n# Markdown extensions\r\n\r\nStackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.\r\n\r\n> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.\r\n\r\n\r\n## SmartyPants\r\n\r\nSmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n|                |ASCII                          |HTML                         |\r\n|----------------|-------------------------------|-----------------------------|\r\n|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |\r\n|Quotes          |`\"Isn't this fun?\"`            |\"Isn't this fun?\"            |\r\n|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|\r\n\r\n\r\n## KaTeX\r\n\r\nYou can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):\r\n\r\nThe *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n$$\r\n\\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n$$\r\n\r\n> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).\r\n\r\n\r\n## UML diagrams\r\n\r\nYou can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:\r\n\r\n```mermaid\r\nsequenceDiagram\r\nAlice ->> Bob: Hello Bob, how are you?\r\nBob-->>John: How about you John?\r\nBob--x Alice: I am good thanks!\r\nBob-x John: I am good thanks!\r\nNote right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.\r\n\r\nBob-->Alice: Checking with John...\r\nAlice->John: Yes... John, how are you?\r\n```\r\n\r\nAnd this will produce a flow chart:\r\n\r\n```mermaid\r\ngraph LR\r\nA[Square Rect] -- Link text --> B((Circle))\r\nA --> C(Round Rect)\r\nB --> D{Rhombus}\r\nC --> D\r\n```",
-    "publish": "2024-08-16T02:39:02Z",
-    "created": "2024-08-16T02:39:35.610Z",
-    "updated": "2024-08-16T02:41:25.743Z",
-    "status": "PB"
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 1,
-  "fields": {
-    "post": 1,
-    "name": "Nhan",
-    "email": "nhan@gmail.com",
-    "body": "This a good post.",
-    "created": "2024-08-15T08:20:04.260Z",
-    "updated": "2024-08-15T08:20:04.260Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 2,
-  "fields": {
-    "post": 1,
-    "name": "Nhan",
-    "email": "nhan@gmail.com",
-    "body": "This is support me many time.",
-    "created": "2024-08-15T08:32:14.644Z",
-    "updated": "2024-08-15T08:32:14.644Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 3,
-  "fields": {
-    "post": 4,
-    "name": "Nhan",
-    "email": "Nguyen@gmail.com",
-    "body": "Ok comment here.",
-    "created": "2024-08-15T08:35:22.710Z",
-    "updated": "2024-08-15T08:35:22.710Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 4,
-  "fields": {
-    "post": 4,
-    "name": "Phong",
-    "email": "nhan@gmail.com",
-    "body": "Good, I like that.",
-    "created": "2024-08-16T01:24:47.963Z",
-    "updated": "2024-08-16T01:24:47.963Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 5,
-  "fields": {
-    "post": 4,
-    "name": "Ha",
-    "email": "mail@gmail.com",
-    "body": "This is the test comment.",
-    "created": "2024-08-16T01:25:38.412Z",
-    "updated": "2024-08-16T01:25:38.412Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 6,
-  "fields": {
-    "post": 4,
-    "name": "Alhem",
-    "email": "alhem@gmail.com",
-    "body": "My name is Alhem, I want to comment here.",
-    "created": "2024-08-16T01:32:19.885Z",
-    "updated": "2024-08-16T01:32:19.885Z",
-    "active": true
-  }
-},
-{
-  "model": "blog.comment",
-  "pk": 7,
-  "fields": {
-    "post": 2,
-    "name": "Nguyen Van Khanh Nhan",
-    "email": "nhannguyenqna2002@gmail.com",
-    "body": "This is a beautiful post.",
-    "created": "2024-08-16T02:10:25.935Z",
-    "updated": "2024-08-16T02:10:25.935Z",
-    "active": true
-  }
-}
 ]

@@ -11,9 +11,11 @@ class EmailPostForm(forms.Form):
 
 
 class CommentForm(forms.ModelForm):
+    parent = forms.IntegerField(widget=forms.HiddenInput, required=False)
+
     class Meta:
         model = Comment
-        fields = ["name", "email", "body"]
+        fields = ("name", "email", "body")
         labels = {
             "name": "Your name",
             "email": "Your email",

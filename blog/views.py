@@ -10,10 +10,11 @@ from django.contrib.postgres.search import (
 )
 from django.db.models import Count, Q
 from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 from .forms import CommentForm, EmailPostForm, SearchForm
 
-from .models import Post
+from .models import Post, Comment
 from taggit.models import Tag
 
 from django.contrib.auth.decorators import login_required
@@ -120,7 +121,19 @@ def post_comment(request, post_id):
     if form.is_valid():
         comment = form.save(commit=False)
         comment.post = post
+        parent_id = form.cleaned_data['parent']
+        if parent_id:
+            comment.parent = Comment.objects.get(id=parent_id)
         comment.save()
+        
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            html = render_to_string('blog/comment.html', {'comment': comment})
+            return JsonResponse({'html': html})
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        errors = form.errors.as_json()
+        return JsonResponse({'errors': errors}, status=400)
+    
     return redirect(post.get_absolute_url())
 
 

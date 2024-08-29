@@ -1,0 +1,27 @@
+{% load blog_tags %}
+
+<div class="row">
+  {% for post in posts %}
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+          <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid card-img-top rounded-top" alt="{{ post.title }}" />
+          <a href="{{ post.get_absolute_url }}"><div class="mask" style="background-color: rgba(0, 0, 0, 0.3);"></div></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.content|markdown|truncatewords_html:20 }}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><strong>By {{ post.author|upper }}</strong> | {{ post.publish }}</small>
+          <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm float-end" data-mdb-ripple-init>Read More</a>
+        </div>
+        <div class="card-footer">
+          {% for post_tag in post.tags.all %}
+            <a href="{% url 'blog:post_list_by_tag' post_tag.slug %}" class="badge bg-primary">{{ post_tag.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

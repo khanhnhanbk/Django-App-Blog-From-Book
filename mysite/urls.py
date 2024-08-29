@@ -35,4 +35,5 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
+    path("accounts/", include("accounts.urls")),
 ]

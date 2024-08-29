@@ -14,52 +14,84 @@
 
   <!-- Content Section -->
   <div class="container mt-5">
-    <h1 class="display-4">{{ post.title }}</h1>
-    <p class="text-muted">Published on {{ post.publish }} by {{ post.author }}</p>
-    <p class="lead">{{ post.content|markdown }}</p>
-  </div>
-
-  <!-- Share Button -->
-  <div class="text-end">
-    <a href="{% url 'blog:post_share' post.id %}" class="btn btn-warning btn-lg mt-3"><i class="bi bi-share-fill"></i> Share</a>
-  </div>
-
-  <!-- Similar Posts Section -->
-
-  <div class="container mt-5">
-    <h2>Related Posts</h2>
-    {% include 'blog/post/includes/list_posts.html' with posts=similar_posts %}
-  </div>
-
-  <!-- Comment Section -->
-  <div class="container mt-5" id="post_comment">
-    <div class="row g-5">
-      <div class="col-md-6">
-        <h2>Comments</h2>
-        <ul class="list-unstyled mt-4">
-          {% for comment in comments %}
-            <li class="mb-3 p-3 border rounded bg-light">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <strong>{{ comment.name }}</strong>
-                  <p class="mb-1">{{ comment.body }}</p>
-                </div>
-                <small class="text-muted">{{ comment.created }}</small>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+            <div class="text-muted fst-italic mb-2">
+              Published on {{ post.publish }} by {{ post.author }}
+            </div>
+            {% if post.tags.all %}
+              <div class="mb-3">
+                {% for tag in post.tags.all %}
+                  <a href="{% url 'blog:post_list_by_tag' tag.slug %}" class="badge bg-secondary text-decoration-none">{{ tag.name }}</a>
+                {% endfor %}
               </div>
-            </li>
-          {% empty %}
-            <li>No comments yet.</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <h2>Add a Comment</h2>
-        <form action="{% url 'blog:post_comment' post.id %}#post_comment" method="post" class="row g-3">
-          {% csrf_token %}
-          {% load crispy_forms_tags %}
-          {{ form|crispy }}
-          <button type="submit" class="btn btn-primary mt-3">Submit</button>
-        </form>
+            {% endif %}
+          </header>
+          
+          <figure class="mb-4">
+            <img class="img-fluid rounded" src="https://picsum.photos/seed/{{ post.id }}/900/400" alt="{{ post.title }}">
+          </figure>
+          
+          <section class="mb-5">
+            {{ post.content|markdown }}
+          </section>
+        </article>
+
+        <section class="mb-5">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h2 class="card-title">Share this post</h2>
+              <a href="{% url 'blog:post_share' post.id %}" class="btn btn-primary">Email</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h2 class="card-title">Comments</h2>
+              {% with comments.count as total_comments %}
+                <h3 class="mb-3">
+                  {{ total_comments }} comment{{ total_comments|pluralize }}
+                </h3>
+              {% endwith %}
+              {% for comment in comments %}
+                <div class="mb-3 p-3 border rounded">
+                  <p class="mb-1"><strong>{{ comment.name }}</strong></p>
+                  <p class="mb-1">{{ comment.body|linebreaks }}</p>
+                  <p class="text-muted"><small>Comment {{ forloop.counter }} / {{ comments.count }}</small></p>
+                </div>
+              {% empty %}
+                <p>There are no comments yet.</p>
+              {% endfor %}
+              {% if new_comment %}
+                <h2>Your comment has been added.</h2>
+              {% else %}
+                <h2>Add a new comment</h2>
+                <form method="post">
+                  {{ comment_form|crispy }}
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary mt-3">Add comment</button>
+                </form>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+
+        {% if similar_posts %}
+          <section>
+            <h2>Similar posts</h2>
+            {% for post in similar_posts %}
+              <div class="mb-3">
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                <p class="text-muted">Published {{ post.publish }} by {{ post.author }}</p>
+              </div>
+            {% endfor %}
+          </section>
+        {% endif %}
       </div>
     </div>
   </div>

@@ -15,21 +15,27 @@ from .forms import CommentForm, EmailPostForm, SearchForm
 from .models import Post
 from taggit.models import Tag
 
+from django.contrib.auth.decorators import login_required
+
+from django.conf import settings
 
 def post_list(request, tag_slug=None):
-    post_list = Post.published.all()
+    object_list = Post.published.all()
     tag = None
+
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
-        post_list = post_list.filter(tags__in=[tag])
+        object_list = object_list.filter(tags__in=[tag])
 
-    paginator = Paginator(post_list, 3)
-    page_number = request.GET.get("page", 1)
+    paginator = Paginator(object_list, settings.POSTS_PER_PAGE)
+    page = request.GET.get('page')
     try:
-        posts = paginator.page(page_number)
+        posts = paginator.page(page)
     except PageNotAnInteger:
+        # If page is not an integer deliver the first page
         posts = paginator.page(1)
     except EmptyPage:
+        # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
 
     return render(

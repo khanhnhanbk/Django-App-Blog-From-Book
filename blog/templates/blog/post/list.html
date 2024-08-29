@@ -7,16 +7,43 @@
 {% block content %}
   <!-- Section: Content -->
   <section class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">
-        <strong>
-          Latest Posts{% if tag %}
-            tagged with "{{ tag.name }}"
-          {% endif %}
-        </strong>
-      </h2>
+    <div class="container mt-5">
+      <h1 class="mb-4 text-center">Latest Blog Posts</h1>
+      
+      {% if tag %}
+        <h2 class="mb-4 text-center">Posts tagged with "{{ tag.name }}"</h2>
+      {% endif %}
 
-      {% include 'blog/post/includes/list_posts.html' with posts=posts %}
+      <div class="row">
+        {% for post in posts %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img src="https://picsum.photos/seed/{{ post.id }}/400/200" class="card-img-top" alt="{{ post.title }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text text-muted">
+                  <small>
+                    Published {{ post.publish.date }} by {{ post.author }}
+                  </small>
+                </p>
+                <p class="card-text">{{ post.content|truncatewords:30|linebreaks }}</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm">Read more</a>
+                {% if post.tags.all %}
+                  <div class="mt-2">
+                    {% for tag in post.tags.all %}
+                      <a href="{% url 'blog:post_list_by_tag' tag.slug %}" class="badge bg-secondary text-decoration-none">{{ tag.name }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          <p>There are no posts yet.</p>
+        {% endfor %}
+      </div>
 
       <!-- Pagination -->
       <div class="d-flex justify-content-center mt-4">

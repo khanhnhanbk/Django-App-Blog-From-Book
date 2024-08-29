@@ -29,6 +29,24 @@
           <a class="nav-link" href="#" rel="nofollow" target="_blank"><i class="fab fa-github"></i></a>
         </li>
       </ul>
+
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span class="nav-link">Welcome, {{ user.username }}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
+          </li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </nav>

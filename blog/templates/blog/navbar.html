@@ -17,7 +17,7 @@
         </li>
       </ul>
       <form class="d-flex" action="{% url 'blog:post_search' %}" method="get">
-        <input class="form-control me-2" type="search" placeholder="Search posts" aria-label="Search" name="query">
+        <input class="form-control me-2" type="search" placeholder="Search posts" aria-label="Search" name="query" id="search-input">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar-nav ms-auto">
@@ -43,3 +43,21 @@
   </div>
 </nav>
 <!-- Navbar -->
+
+<!-- Add these script tags at the end of the file -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+<script>
+$(function() {
+  $("#search-input").autocomplete({
+    source: "{% url 'blog:autocomplete' %}",
+    minLength: 2,
+    select: function(event, ui) {
+      $("#search-input").val(ui.item.value);
+      $(this).closest("form").submit();
+    }
+  });
+});
+</script>

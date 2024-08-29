@@ -8,7 +8,8 @@ from django.contrib.postgres.search import (
     SearchRank,
     TrigramSimilarity,
 )
-from django.db.models import Count
+from django.db.models import Count, Q
+from django.http import JsonResponse
 
 from .forms import CommentForm, EmailPostForm, SearchForm
 
@@ -72,7 +73,7 @@ def post_detail(request, year, month, day, post):
         "blog/post/detail.html",
         {
             "post": post,
-            "form": form,
+            "comment_form": form,
             "comments": comments,
             "similar_posts": similar_posts,
         },
@@ -114,13 +115,12 @@ def post_share(request, post_id):
 @require_POST
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
-
-    form = CommentForm(request.POST)
+    comment = None
+    form = CommentForm(data=request.POST)
     if form.is_valid():
-        new_comment = form.save(commit=False)
-        new_comment.post = post
-        new_comment.save()
-
+        comment = form.save(commit=False)
+        comment.post = post
+        comment.save()
     return redirect(post.get_absolute_url())
 
 
@@ -153,3 +153,11 @@ def post_search(request):
             "results": results,
         },
     )
+
+def autocomplete(request):
+    query = request.GET.get('term', '')
+    posts = Post.published.filter(
+        Q(title__icontains=query) | Q(content__icontains=query)
+    ).distinct()[:10]  # Limit to 10 suggestions
+    results = [post.title for post in posts]
+    return JsonResponse(results, safe=False)

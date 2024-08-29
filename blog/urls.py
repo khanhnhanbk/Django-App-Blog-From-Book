@@ -34,4 +34,5 @@ urlpatterns = [
         views.post_search,
         name="post_search",
     ),
+    path('autocomplete/', views.autocomplete, name='autocomplete'),
 ]

@@ -1,22 +1,45 @@
 {% extends 'blog/base.html' %}
-{% block title %}
-  Share a post
-{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block title %}Share "{{ post.title }}"{% endblock %}
+
 {% block content %}
-  {% if sent %}
-    <h1>E-mail successfully sent</h1>
-    <p>"{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.</p>
-  {% else %}
-    <h1>Share "{{ post.title }}" by e-mail</h1>
-    <form method="post" class="row g-3">
-      {% load crispy_forms_tags %}
-      <div class="col">{{ form.name|as_crispy_field }}</div>
-      <div class="col">{{ form.to|as_crispy_field }}</div>
-      <div class="col-12">{{ form.comments|as_crispy_field }}</div>
-      {% csrf_token %}
-      <div class="col text-center">
-        <input type="submit" class="btn btn-primary" value="Send e-mail" />
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body">
+          {% if sent %}
+            <h1 class="card-title text-center mb-4">Email Successfully Sent</h1>
+            <div class="alert alert-success" role="alert">
+              <p class="mb-0">"{{ post.title }}" was successfully shared with {{ form.cleaned_data.to }}.</p>
+            </div>
+            <div class="text-center mt-4">
+              <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Back to Post</a>
+            </div>
+          {% else %}
+            <h1 class="card-title text-center mb-4">Share "{{ post.title }}"</h1>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  {{ form.name|as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.to|as_crispy_field }}
+                </div>
+              </div>
+              <div class="mb-3">
+                {{ form.comments|as_crispy_field }}
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Send Email</button>
+              </div>
+            </form>
+          {% endif %}
+        </div>
       </div>
-    </form>
-  {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock %}

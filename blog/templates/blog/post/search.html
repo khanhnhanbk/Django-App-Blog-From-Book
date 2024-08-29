@@ -2,64 +2,44 @@
 {% load blog_tags %}
 {% load crispy_forms_tags %}
 
-{% block title %}
-  {{ block.super }} | Search
-{% endblock %}
+{% block title %}Search{% endblock %}
 
 {% block content %}
-  <!-- Section: Content -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">
-        <strong>
-          {% if query %}
-            Search Results for "{{ query }}"
-          {% else %}
-            Search
-          {% endif %}
-        </strong>
-      </h2>
+<div class="container mt-5">
+  <h1 class="mb-4">Search Posts</h1>
 
-      {% if tag %}
-        <h3 class="text-center mb-4">Posts tagged with "{{ tag.name }}"</h3>
-      {% endif %}
+  <form method="get" class="mb-4">
+    <div class="input-group">
+      {{ form.query|as_crispy_field }}
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
 
+  {% if query %}
+    <h2 class="mb-3">Search results for "{{ query }}"</h2>
+    {% if results %}
       <div class="row">
         {% for post in results %}
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
-                <img src="https://picsum.photos/300/200?random={{ post.id }}" class="img-fluid card-img-top rounded-top" alt="{{ post.title }}" />
-                <a href="{{ post.get_absolute_url }}"><div class="mask" style="background-color: rgba(0, 0, 0, 0.3);"></div></a>
-              </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text">{{ post.content|markdown|truncatewords_html:20 }}</p>
+                <h5 class="card-title">
+                  <a href="{{ post.get_absolute_url }}" class="text-decoration-none">{{ post.title }}</a>
+                </h5>
+                <p class="card-text">{{ post.content|markdown|truncatewords_html:30 }}</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted"><strong>By {{ post.author|upper }}</strong> | {{ post.publish }}</small>
-                <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm float-end" data-mdb-ripple-init>Read More</a>
-              </div>
-              <div class="card-footer">
-                {% for post_tag in post.tags.all %}
-                  <a href="{% url 'blog:post_list_by_tag' post_tag.slug %}" class="badge bg-primary">{{ post_tag.name }}</a>
-                {% endfor %}
+              <div class="card-footer text-muted">
+                Published {{ post.publish }} by {{ post.author }}
               </div>
             </div>
           </div>
         {% endfor %}
       </div>
-
-      <!-- Pagination -->
-      <div class="d-flex justify-content-center mt-4">
-        {% include 'blog/pagination.html' with page=posts %}
-      </div>
-
-      <h2>Search for posts</h2>
-      <form method="get">
-        <div class="input-group mb-3">{{ form|crispy }}</div>
-      </form>
-    </div>
-  </section>
-  <!-- Section: Content -->
+    {% else %}
+      <p>No results found.</p>
+    {% endif %}
+  {% elif request.GET %}
+    <p>Please enter a search query.</p>
+  {% endif %}
+</div>
 {% endblock %}

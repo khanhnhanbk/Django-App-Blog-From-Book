@@ -47,9 +47,9 @@
           <div class="card bg-light">
             <div class="card-body">
               <h2 class="card-title">Comments</h2>
-              <div id="comments">
+              <div id="comments-container">
                 {% for comment in comments %}
-                  {% include "blog/comment.html" %}
+                  {% include "blog/comment.html" with comment=comment %}
                 {% empty %}
                   <p>There are no comments yet.</p>
                 {% endfor %}
@@ -63,50 +63,59 @@
               </form>
 
               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-              <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
               <script>
                 $(document).ready(function() {
-                  // AJAX comment submission
+                  function submitComment(form) {
+                    $.ajax({
+                      url: form.attr('action'),
+                      type: 'POST',
+                      data: form.serialize(),
+                      dataType: 'json',
+                      success: function(response) {
+                        if (response.html) {
+                          reloadComments();
+                          form.trigger('reset');
+                        }
+                      },
+                      error: function(xhr, status, error) {
+                        console.error(error);
+                      }
+                    });
+                  }
+
+                  function reloadComments() {
+                    $.ajax({
+                      url: window.location.href,
+                      type: 'GET',
+                      dataType: 'html',
+                      success: function(response) {
+                        var newComments = $(response).find('#comments-container').html();
+                        $('#comments-container').html(newComments);
+                      },
+                      error: function(xhr, status, error) {
+                        console.error(error);
+                      }
+                    });
+                  }
+
+                  // Handle main comment form submission
                   $('#comment-form').on('submit', function(e) {
                     e.preventDefault();
                     submitComment($(this));
                   });
 
-                  // Show/hide reply form using event delegation
-                  $(document).on('click', '.reply-btn', function(e) {
-                    e.preventDefault();
-                    var commentId = $(this).data('comment-id');
-                    $('#reply-form-' + commentId).toggleClass('d-none');
-                  });
-
-                  // AJAX reply submission using event delegation
+                  // Handle reply form submissions using event delegation
                   $(document).on('submit', '.reply-form', function(e) {
                     e.preventDefault();
                     submitComment($(this));
                   });
 
-                  function submitComment(form) {
-                    $.ajax({
-                      type: 'POST',
-                      url: form.attr('action'),
-                      data: form.serialize(),
-                      dataType: 'json',
-                      success: function(response) {
-                        if (form.hasClass('reply-form')) {
-                          form.closest('.comment').find('> .replies').append(response.html);
-                          form[0].reset();
-                          form.addClass('d-none');
-                        } else {
-                          $('#comments').append(response.html);
-                          form[0].reset();
-                        }
-                      },
-                      error: function(response) {
-                        console.log(response.responseJSON.errors);
-                        // Handle errors (e.g., display error messages)
-                      }
-                    });
-                  }
+                  // Show/hide reply form
+                  $(document).on('click', '.reply-btn', function(e) {
+                    e.preventDefault();
+                    var commentId = $(this).data('comment-id');
+                    $('#reply-form-' + commentId).toggleClass('d-none');
+                  });
                 });
               </script>
             </div>

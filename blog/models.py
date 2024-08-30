@@ -76,3 +76,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.name} on {self.post}'
+
+    @property
+    def children(self):
+        return Comment.objects.filter(parent=self).order_by('created')

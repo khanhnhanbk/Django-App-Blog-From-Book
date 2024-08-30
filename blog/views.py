@@ -67,8 +67,8 @@ def post_detail(request, year, month, day, post):
         "-same_tags", "-publish"
     )[:4]
 
-    form = CommentForm()
-    comments = post.comments.filter(active=True)
+    form = CommentForm(user=request.user)
+    comments = post.comments.filter(active=True, parent=None)
     return render(
         request,
         "blog/post/detail.html",
@@ -133,8 +133,7 @@ def post_comment(request, post_id):
         comment.save()
         
         if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-            html = render_to_string('blog/comment.html', {'comment': comment})
-            return JsonResponse({'html': html})
+            return JsonResponse({'success': True})
     
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         errors = form.errors.as_json()

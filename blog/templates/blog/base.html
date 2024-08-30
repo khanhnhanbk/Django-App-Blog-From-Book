@@ -63,9 +63,9 @@
               <h1 class="mb-3">Welcome to Our Blog</h1>
               <h4 class="mb-3">Discover Insights, Stories, and Knowledge</h4>
               <a
-                class="btn btn-outline-light btn-lg"
                 href="{% url 'blog:post_list' %}#main"
-                role="button"
+                class="btn btn-outline-light btn-lg"
+                onKeyPress="if(event.key === 'Enter') this.click()"
                 >Start Reading</a
               >
             </div>
@@ -127,21 +127,22 @@
     <script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
     <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         tinymce.init({
-          selector: 'textarea.tinymce',
+          selector: "textarea.tinymce",
           height: 360,
-          width: 'auto',
+          width: "auto",
           plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount'
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount",
           ],
-          toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+          toolbar:
+            "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
           content_css: [
-            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-            '//www.tiny.cloud/css/codepen.min.css'
-          ]
+            "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
+            "//www.tiny.cloud/css/codepen.min.css",
+          ],
         });
       });
     </script>

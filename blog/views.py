@@ -77,6 +77,7 @@ def post_detail(request, year, month, day, post):
             "comment_form": form,
             "comments": comments,
             "similar_posts": similar_posts,
+            "request": request,  # Add this line
         },
     )
 

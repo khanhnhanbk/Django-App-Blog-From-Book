@@ -41,14 +41,7 @@
           </section>
         </article>
 
-        <section class="mb-5">
-          <div class="card bg-light">
-            <div class="card-body">
-              <h2 class="card-title">Share this post</h2>
-              <a href="{% url 'blog:post_share' post.id %}" class="btn btn-primary">Email</a>
-            </div>
-          </div>
-        </section>
+      
 
         <section class="mb-5">
           <div class="card bg-light">
@@ -117,6 +110,28 @@
                 });
               </script>
             </div>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h4>Share this post</h4>
+          <div class="d-flex">
+            <!-- Email -->
+            <a class="btn btn-primary me-2" style="background-color: #333333;" href="{% url 'blog:post_share' post.id %}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <!-- Facebook -->
+            <a class="btn btn-primary me-2" style="background-color: #3b5998;" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- Twitter -->
+            <a class="btn btn-primary me-2" style="background-color: #55acee;" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a class="btn btn-primary me-2" style="background-color: #0082ca;" href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title }}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </section>
 

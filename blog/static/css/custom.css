@@ -39,3 +39,7 @@ article img {
 .comment-form textarea {
     height: 100px;
 }
+
+main {
+  margin-top: -3rem;
+}

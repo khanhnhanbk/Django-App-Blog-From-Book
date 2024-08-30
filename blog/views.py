@@ -74,8 +74,8 @@ def post_detail(request, year, month, day, post):
         "blog/post/detail.html",
         {
             "post": post,
-            "comment_form": form,
             "comments": comments,
+            "comment_form": form,
             "similar_posts": similar_posts,
             "request": request,  # Add this line
         },
@@ -118,13 +118,18 @@ def post_share(request, post_id):
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
     comment = None
-    form = CommentForm(data=request.POST)
+    form = CommentForm(data=request.POST, user=request.user)
     if form.is_valid():
         comment = form.save(commit=False)
         comment.post = post
+        if request.user.is_authenticated:
+            comment.name = request.user.username
+            comment.email = request.user.email
         parent_id = form.cleaned_data['parent']
         if parent_id:
-            comment.parent = Comment.objects.get(id=parent_id)
+            parent_comment = Comment.objects.get(id=parent_id)
+            comment.parent = parent_comment
+            comment.level = parent_comment.level + 1
         comment.save()
         
         if request.headers.get('x-requested-with') == 'XMLHttpRequest':

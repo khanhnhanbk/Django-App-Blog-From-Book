@@ -69,6 +69,7 @@ class Comment(models.Model):
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
+    level = models.IntegerField(default=0)
 
     class Meta:
         ordering = ('created',)

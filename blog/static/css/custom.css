@@ -43,3 +43,17 @@ article img {
 main {
   margin-top: -3rem;
 }
+
+.comment {
+    margin-left: 0;
+}
+.comment .comment {
+    margin-left: 20px;
+}
+.comment .comment .comment {
+    margin-left: 40px;
+}
+.comment .comment .comment .comment {
+    margin-left: 60px;
+}
+/* Add more levels if needed */

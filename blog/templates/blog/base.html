@@ -82,21 +82,18 @@
         <div class="row">
           <!-- Content area -->
           <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            {% block content %}
-            <!-- Your content goes here -->
-            {% endblock %}
+            {% block content %} {% endblock %}
           </div>
-          <nav
-            id="sidebar"
-            class="col-md-3 col-lg-2 d-md-block sidebar"
-          >
+          <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
             <div class="position-sticky" style="top: 70px">
               <div class="p-4 bg-white rounded shadow">
                 <h3 class="mb-4 text-primary">My Blog</h3>
                 <p class="mb-4 text-muted">
-                  Welcome! I've shared <span class="fw-bold text-primary">{% total_posts %}</span> insightful posts so far.
+                  Welcome! I've shared
+                  <span class="fw-bold text-primary">{% total_posts %}</span>
+                  insightful posts so far.
                 </p>
-                <hr class="my-4">
+                <hr class="my-4" />
                 <h4 class="mb-3 text-secondary">Latest Posts</h4>
                 <div class="list-group list-group-flush mb-4">
                   {% show_latest_posts 3 %}
@@ -177,3 +174,48 @@
     border-radius: 5px;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const commentSection = document.querySelector(".comment-section");
+    if (commentSection) {
+      commentSection.addEventListener("click", function (e) {
+        if (e.target.classList.contains("reply-btn")) {
+          const commentId = e.target.dataset.commentId;
+          const replyForm = document.querySelector(`#reply-form-${commentId}`);
+          replyForm.classList.toggle("d-none");
+        }
+      });
+
+      commentSection.addEventListener("submit", function (e) {
+        if (e.target.classList.contains("reply-form")) {
+          e.preventDefault();
+          const form = e.target;
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.html) {
+                const parentComment = form.closest(".comment");
+                const repliesContainer =
+                  parentComment.querySelector(".replies");
+                repliesContainer.insertAdjacentHTML("beforeend", data.html);
+                form.reset();
+                form.closest(".reply-form-container").classList.add("d-none");
+              } else if (data.errors) {
+                console.error("Form errors:", data.errors);
+              }
+            })
+            .catch((error) => console.error("Error:", error));
+        }
+      });
+    }
+  });
+</script>

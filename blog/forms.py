@@ -15,12 +15,20 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ("name", "email", "body")
+        fields = ("body",)
         labels = {
-            "name": "Your name",
-            "email": "Your email",
             "body": "Your comment",
         }
+        widgets = {
+            "body": forms.Textarea(attrs={"rows": 3}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if not self.user or not self.user.is_authenticated:
+            self.fields['name'] = forms.CharField(max_length=80, required=True)
+            self.fields['email'] = forms.EmailField(required=True)
 
 
 class SearchForm(forms.Form):

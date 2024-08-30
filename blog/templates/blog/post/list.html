@@ -26,7 +26,7 @@
                     Published {{ post.publish.date }} by {{ post.author }}
                   </small>
                 </p>
-                <p class="card-text">{{ post.content|truncatewords:30|linebreaks }}</p>
+                <p class="card-text">{{ post.content|safe|truncatewords_html:30 }}</p>
               </div>
               <div class="card-footer bg-transparent border-top-0">
                 <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm">Read more</a>

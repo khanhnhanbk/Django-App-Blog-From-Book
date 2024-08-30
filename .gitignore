@@ -29,3 +29,6 @@ extras/sample_site/db.sqlite3
 venv/
 
 .env
+
+staticfiles/
+

@@ -36,4 +36,5 @@ urlpatterns = [
         name="django.contrib.sitemaps.views.sitemap",
     ),
     path("accounts/", include("accounts.urls")),
+    path('tinymce/', include('tinymce.urls')),
 ]

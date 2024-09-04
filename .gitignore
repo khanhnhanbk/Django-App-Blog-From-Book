@@ -32,3 +32,4 @@ venv/
 
 staticfiles/
 
+postgres_data/

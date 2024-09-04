@@ -13,10 +13,10 @@ services:
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/blogapp
       - DEBUG=True
-      - SECRET_KEY=your_secret_key_here
-      - EMAIL_HOST_USER=your_email_here
-      - EMAIL_HOST_PASSWORD=your_email_password_here
-      - DEFAULT_FROM_EMAIL=your_default_from_email_here
+      - SECRET_KEY=django-insecure-your_secret_key_here
+      - EMAIL_HOST_USER=phongduong24.work@gmail.com
+      - EMAIL_HOST_PASSWORD=uynxurtgbtecaahm
+      - DEFAULT_FROM_EMAIL=phongduong24.work@gmail.com
 
   db:
     image: postgres:13

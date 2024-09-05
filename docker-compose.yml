@@ -11,9 +11,9 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/blogapp
+      - DATABASE_URL=postgres://blog:xxxxx@db:5432/blog
       - DEBUG=True
-      - SECRET_KEY=django-insecure-your_secret_key_here
+      - SECRET_KEY=django-insecure-9(gy-yan5+)&#^m+-1osid90_fdw@a@q!)=lt!8bxuwi4nwer+
       - EMAIL_HOST_USER=phongduong24.work@gmail.com
       - EMAIL_HOST_PASSWORD=uynxurtgbtecaahm
       - DEFAULT_FROM_EMAIL=phongduong24.work@gmail.com
@@ -23,9 +23,14 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=blogapp
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=blog
+      - POSTGRES_USER=blog
+      - POSTGRES_PASSWORD=xxxxx
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U blog" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:

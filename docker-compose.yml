@@ -9,25 +9,26 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
-      - DATABASE_URL=postgres://blog:xxxxx@db:5432/blog
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       - DEBUG=True
-      - SECRET_KEY=django-insecure-9(gy-yan5+)&#^m+-1osid90_fdw@a@q!)=lt!8bxuwi4nwer+
-      - EMAIL_HOST_USER=phongduong24.work@gmail.com
-      - EMAIL_HOST_PASSWORD=uynxurtgbtecaahm
-      - DEFAULT_FROM_EMAIL=phongduong24.work@gmail.com
+      - SECRET_KEY=${SECRET_KEY}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL}
 
   db:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=blog
-      - POSTGRES_USER=blog
-      - POSTGRES_PASSWORD=xxxxx
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U blog" ]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
